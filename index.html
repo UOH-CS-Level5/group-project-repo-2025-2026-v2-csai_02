@@ -21,8 +21,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js?hl=en" async defer></script>
-    <script src="/static/modules/cropperjs-1.5.13/dist/cropper.min.js"></script>
-    <link  href="/static/modules/cropperjs-1.5.13/dist/cropper.min.css" rel="stylesheet">
     <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
 <script src="https://files.bpcontent.cloud/2026/02/19/15/20260219152203-Y4B6CFMN.js" defer></script>
     <style>
@@ -70,12 +68,6 @@
                 </li>
             </ul>
         </div>
-        <div class="navbar-languages">
-            <select class="languages" id="js-lang-selector" onchange="langSelector(this.value)">
-                <option value="uk" id="uk-lang">Українська</option>
-                <option value="en" id="en-lang">English</option>
-            </select>
-        </div>
     </div>
 </nav>
     <div class="big-wrapper">
@@ -99,155 +91,15 @@
         </div>
     </div>
 
-    
-
-        <div class="post" id="settings-reviews-settings">
-
-                <p style="margin: 0; text-decoration: underline;">
-                    <a href="/en/manager-panel-administration-page-22114/">
-                        Manager panel
-                    </a>
-                </p>
-                
-                <p style="margin: 1.5rem 0 0 0; text-decoration: underline;">
-                    <a href="/administration-page-22114/">
-                        Admin page (database)
-                    </a>
-                </p>
-                
-
-        </div>
-    
-    
-
-    <div class="post" id="settings-profile-settings">
-
-        <div class="settings-header-wrapper">
-            <p class="settings-header">
-                Edit profile
-            </p>
-        </div>
-
-        <div class="form-wrapper">
-
-            <div class="settings-profile-picture-div">
-                <div id="pool" style="display: none;">
-                    <div id="drop-area-container">
-                        <div id="drop-area">
-                            <input type="file" id="file-input" accept="image/*">
-                            <label class="button" for="file-input">Select your file</label>
-                            <p>or just drop it here for us to catch ;)</p>
-                        </div>
-                
-                        <div class="box-2">
-                            <div class="result"></div>
-                        </div>
-                
-                        <button id="submit-profile-picture">Submit</button>
-                    </div>
-                </div>
-
-                <div id="settings-profile-picture-img-div">
-                    <img src=" /media/default-profile-picture.jpg "/>
-                </div>
-
-                <div id="studybud-chat-window"></div>
- 
-
-                <button type="button" id="change-picture-button">Change profile picture</button>
-                
-
-
-            </div>
-
-            <div class="form-wrapper" id="change-email-wrapper">
-                <form action="change-email" method="POST" class="settings-form" id="change-email-form">
-                    <input type="hidden" name="csrfmiddlewaretoken" value="j3rgxvI0POcgBtkB9wj9Nh50qbOFW7zCeRe4RH35LwGqu3i6VElQdcnGUk07LFFo">
-
-                    <div class="input-block">
-                        <div class="input-container">
-                            <i class="fa-solid fa-envelope" id="icon"></i>
-                            <input type="email" name="email" placeholder="andrii.chubok@gmail.com" class="settings-input" id="email-input"/>
-                        </div>
-                        <div class="message" id="js-message-email-wrong" style="display: none">
-                            <p>Enter valid email</p>
-                        </div>
-                    </div>
-
-                    <button type="submit" class="submit-button" disabled id="change-email-button" style="opacity: 0.7;">Change email</button>
-
-                </form>
-            </div>
-
-            <div class="form-wrapper" id="change-username-wrapper">
-                <form action="change-username" method="POST" class="settings-form" id="change-username-form">
-                    <input type="hidden" name="csrfmiddlewaretoken" value="j3rgxvI0POcgBtkB9wj9Nh50qbOFW7zCeRe4RH35LwGqu3i6VElQdcnGUk07LFFo">
-                    <div class="input-block">
-                        <div class="input-container">
-                            <i class="fa-solid fa-user" id="icon"></i>
-                            <input type="text" name="username" placeholder="andrii" class="settings-input" id="username-input"/>
-                        </div>
-                        <div class="message" id="js-message-username-wrong" style="display: none">
-                            <p>Username should contain only Latin letters(lowercase and uppercase), dots, underscores and hyphens.</p>
-                        </div>
-                    </div>
-
-                    <button type="submit" class="submit-button" disabled id="change-username-button" style="opacity: 0.7;">Change username</button>
-
-                </form>
-            </div>
-
-            <div class="form-wrapper" id="deactivate-account-wrapper">
-                <form action="deactivate-account-fs" method="POST" class="settings-form" id="deactivate-account-form">
-                    <input type="hidden" name="csrfmiddlewaretoken" value="j3rgxvI0POcgBtkB9wj9Nh50qbOFW7zCeRe4RH35LwGqu3i6VElQdcnGUk07LFFo">
-                    <button type="submit" class="submit-button" id="deactivate-account-button">Deactivate my account</button>
-
-                </form>
-            </div>
-
-        </div>
-
-    </div>
-
     <div class="post" id="settings-change-password-settings">
 
         <div class="settings-header-wrapper">
             <p class="settings-header">
-                Change password
+                Chatbot
             </p>
         </div>
 
-        <div class="form-wrapper">
-
-            <form action="change-password" method="POST" class="settings-form" id="change-password-form">
-                
-                <div class="input-block">
-                    <div class="input-container">
-                        <i class="fa-solid fa-lock" id="icon"></i>
-                        <input type="password" name="password1" placeholder="New Password" class="settings-input" id="password-input1"/>
-                    </div>
-                </div>
-
-                <div class="message" id="js-message-length">
-                    <p>Password must contain at least 8 characters</p>
-                </div>
-
-                <div class="input-block">
-                    <div class="input-container">
-                        <i class="fa-solid fa-lock" id="icon"></i>
-                        <input type="password" name="password2" placeholder="Confirm New Password" class="settings-input" id="password-input2"/>
-                    </div>
-                </div>
-
-                <div class="message" id="js-message-match">
-                    <p>Passwords don&#x27;t match</p>
-                </div>
-
-                <button type="submit" class="submit-button" disabled id="submit-password-button">Change</button>
-                
-            </form>
-
-        </div>
+        <div id="studybud-chat-window"></div>
 
     </div>
 
@@ -255,7 +107,7 @@
         
         <div class="settings-header-wrapper">
             <p class="settings-header">
-                Privacy
+                Settings
             </p>
         </div>
 
@@ -279,60 +131,6 @@
 
     </div>
 
-    <div class="post" id="settings-emails-settings">
-        
-        <div class="settings-header-wrapper">
-            <p class="settings-header">
-                Emails
-            </p>
-        </div>
-
-        <div class="form-wrapper">
-            <div class="s-checkbox-toggle-div">
-                <p class="checkbox-toggle-p">About my posts being added to &quot;Saved&quot;</p>
-                <input type="checkbox" class="checkbox-toggle" id="saved-email"  checked="true" />
-                <label for="saved-email" class="checkbox-toggle-label"></label>
-            </div>
-            <div class="s-checkbox-toggle-div">
-                <p class="checkbox-toggle-p">About new messages</p>
-                <input type="checkbox" class="checkbox-toggle" id="new-msg-email"  checked="true" />
-                <label for="new-msg-email" class="checkbox-toggle-label"></label>
-            </div>
-            <div class="s-checkbox-toggle-div">
-                <p class="checkbox-toggle-p">About new reviews</p>
-                <input type="checkbox" class="checkbox-toggle" id="new-review-email"  checked="true" />
-                <label for="new-review-email" class="checkbox-toggle-label"></label>
-            </div>
-            <div class="s-checkbox-toggle-div">
-                <p class="checkbox-toggle-p">About new requests</p>
-                <input type="checkbox" class="checkbox-toggle" id="new-req-email"  checked="true" />
-                <label for="new-req-email" class="checkbox-toggle-label"></label>
-            </div>
-            <div class="s-checkbox-toggle-div">
-                <p class="checkbox-toggle-p">About accepted requests</p>
-                <input type="checkbox" class="checkbox-toggle" id="acc-req-email"  checked="true" />
-                <label for="acc-req-email" class="checkbox-toggle-label"></label>
-            </div>
-            <div class="s-checkbox-toggle-div" style="border: none;">
-                <p class="checkbox-toggle-p">About rejected requests</p>
-                <input type="checkbox" class="checkbox-toggle" id="rej-req-email"  checked="true" />
-                <label for="rej-req-email" class="checkbox-toggle-label"></label>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="post" id="settings-reviews-settings">
-        <div class="settings-header-wrapper">
-            <p class="settings-header">
-                Reviews
-            </p>
-        </div>
-    </div>
-
-
-            </div>
-
             <div id="side-panel">
 
                 <div class="notification-panel" id="notification-panel">
@@ -352,7 +150,7 @@
         <a href="/en/cookies/">Cookies</a>
     </div>
     <div class="copyright-footer side">
-        <small>&copy; All rights reserved 2022-<span class="year"></span>, Andrii Chubok</small>
+        <small>&copy; All rights reserved 2026-<span class="year"></span>, CS_AI-2</small>
     </div>
 </div>
 
@@ -375,7 +173,7 @@
         <a id="footer-cookies" href="/en/cookies/">Cookies</a>
     </div>
     <div class="copyright-footer">
-        <small>&copy; All rights reserved 2022-<span class="year"></span>, Andrii Chubok</small>
+        <small>&copy; All rights reserved 2026-<span class="year"></span>, CS_AI-2</small>
     </div>
 </footer>
 
